@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        document.addEventListener('DOMContentLoaded',function(){
+            const textarea = document.querySelector('textarea')
+            const h1 = document.querySelector('h1')
+
+            textarea.addEventListener('keyup',(event) => {
+                const length = textarea.value.length
+                h1.textContent = `글자 수: ${length}`
+            })
+        })
+    </script>
+    1.textarea라는 변수 선언 h1이라는 변수선언
+
+    2.keyup은 키를 놓을 때 이벤트가 발생한다는 의미
+    
+    3.length 변수 선언 textarea의 길이 받기
+
+    4.글자수와 길이 나타내기
+</head>
+<body>
+    <h1></h1>
+    <textarea></textarea>
+</body>
+</html>

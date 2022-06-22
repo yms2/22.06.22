@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>단위변환</title>
+    <script>
+        document.addEventListener('DOMContentLoaded', function(){
+            const input = document.querySelector('input')
+            const button = document.querySelector('button')
+            const p = document.querySelector('p')
+
+        document.addEventListener('click',() =>{
+            const inch = Number(input.value)
+
+            if (isNaN(inch)) {
+                p.textContent = '숫자를 입력해주세요'
+                return
+            }
+
+            const cm = inch * 2.54
+            p.textContent = `${cm} cm`
+            })
+        })
+    </script>
+</head>
+
+
+1.input button p 변수를 선언해준다.
+2.클릭이벤트로 isNan은 숫자인지 아닌지 판별해주는 것
+3.if문으로 숫자가 아니면 숫자를 입력해달라고 나타나게 해준다.
+4.cm라는 변수를 지정해주고 inch값의 2.54의 값이 나타나게 해준다.
+<body>
+    <input type="text">inch <br>
+    <button>계산</button>
+    <p></p>
+</body>
+</html>

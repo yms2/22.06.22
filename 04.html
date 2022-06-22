@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        document.addEventListener('DOMContentLoaded',function(){
+            const input = document.querySelector('input')
+            const p = document.querySelector('p')
+            const isEmail = (value) => {
+                return (value.indexOf('@') > 1)
+                && (value.split('@')[1].indexOf('.') > 1)
+            }
+
+            input.addEventListener('keyup',(event) => {
+                const value = event.currentTarget.value
+                if(isEmail(value)){
+                    p.style.color = 'green'
+                    p.textContent = `이메일 형식입니다: ${value}`
+                }else{
+                    p.style.color = 'red'
+                    p.textContent =`이메일 형식이 아닙니다: ${value} `
+                }
+            })
+        })
+        //e.target은 자식 하나만
+        //e.currentTarget은 모두다
+        const onLogin = (e) =>{
+            console.log(e.target);
+            console.log(e.currentTarget);
+        }
+    </script>
+</head>
+
+1.변수를 선언해준다.
+2. indexOf는 문자열에서 특정 문자열을 찾고 검색된 문자열이 첫번째로 나타나는 위치로 index를 리턴해준다.
+3. 이메일칸에 넣은 값이  @가 하나보다 많으면 리턴하고 @가 한개 .은 한개이상있어야 한다
+4. 이 두개의 조건을 모두 성립해야 실행된다. &&의 의미임
+5. if문으로 ismail의 값이 위의 조건에 충족하면 이메일 형식입니다.라고 나타나고
+6. 성립하지 않으면 else문이 나타난다.
+<body>
+    <input type="text">
+    <p></p>
+    <br><br><br><br><br>
+    <button onclick="{onLogin}">
+        <span>afds</span>
+    </button>
+</body>
+</html>

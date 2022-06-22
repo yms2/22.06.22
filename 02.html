@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        document.addEventListener('DOMContentLoaded',function(){
+            //초기설정
+            const h1 = document.querySelector('h1')
+            h1.style.position = 'absolute'
+
+            //별의 이동
+            let [x,y] = [0,0]
+            const block = 20
+            const print = () => {
+                h1.style.left = `${x * block}px`
+                h1.style.top = `${y * block}px`
+            }
+            print()
+
+            const [left, up, right, down] = [37, 38, 39, 40]
+            document.body.addEventListener('keydown',(event) => {
+                switch (event.keyCode){
+                case left:
+                    x -= 1
+                    break
+                case up:
+                    y -= 1
+                    break
+                case right:
+                    x += 1
+                    break
+                case down:
+                    y += 1
+                    break
+                }
+                print()
+            })
+        })
+
+    </script>
+</head>
+        1.h1이라는 변수를 선언함
+        2.h1의 스타일과 포지션을 absolute준다.
+        3.x,y의 값을 0 0으로 설정해주고
+        4.한번 이벤트 일어날때마다 20씩 움진인다.
+        5.키보드의 키값을 넣어준다.
+        6.keydown 키 누르고 난 후 의 이벤트 설정
+        7.left를 누르면 x값이 1줄어들고 멈춤
+        - 업 다운 라이트 레프트 똑같이
+        8.print 방향 설정에 의해 방향값으로 이동
+<body>
+    <h1>★</h1>
+</body>
+</html>
